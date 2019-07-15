@@ -55,16 +55,6 @@ typedef struct Token {
 Token token;
 const char* stream;
 
-const char *keyword_if;
-const char *keyword_for;
-const char *keyword_while;
-
-void init_keywords() {
-	keyword_if = str_intern("if");
-	keyword_for = str_intern("for");
-	keyword_while = str_intern("while");
-}
-
 size_t copy_token_kind_str(char* dest, size_t dest_size, TokenKind kind) {
 	size_t n = 0;
 	switch (kind) {
