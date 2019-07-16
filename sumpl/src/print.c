@@ -55,7 +55,6 @@ void print_expr(Expr *expr) {
 		print_expr(expr->cast.expr);
 		printf(")");
 		break;
-		///
 	case EXPR_CALL:
 		printf("(func ");
 		print_expr(expr->call.expr);

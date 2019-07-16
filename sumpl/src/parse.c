@@ -1,8 +1,4 @@
-#define UINT64_MINUS(x) (-(int64_t)x)
-
 Expr* parse_expr();
-
-#define get_op_and_next_token() token.kind; next_token();
 
 Expr* parse_operand() {
 	Expr* expr = NULL;
@@ -37,7 +33,6 @@ Expr* parse_operand() {
 
 Expr* parse_base_expr() {
 	Expr* expr = parse_operand();
-	//because i can't understand grammar for base_expr (.) check syntax.txt
 	return expr;
 }
 
@@ -45,6 +40,8 @@ bool is_unary_op() {
 	return is_token('+') || is_token('-') ||
 		is_token('&') || is_token('*');
 }
+
+#define get_op_and_next_token() token.kind; next_token();
 
 Expr* parse_unary_expr() {
 	Expr* expr;
@@ -150,6 +147,7 @@ Expr* parse_expr() {
 	return parse_ternary_expr();
 }
 
+#define UINT64_MINUS(x) (-(int64_t)x)
 
 uint64_t exec_expr(Expr *expr) {
 	uint64_t lval, rval, val;
@@ -257,7 +255,6 @@ uint64_t exec_expr(Expr *expr) {
 #define pause() system("PAUSE")
 
 void print_expr_tests() {
-
 	Expr *exprs[] = {
 		new_expr_binary('+', new_expr_int(10), new_expr_int(20)),
 		new_expr_unary('-', new_expr_float(3.14)),
@@ -303,6 +300,28 @@ void expr_test() {
 }
 
 
+Stmt *stmt_parse() {
+	Stmt *stmt = NULL;
+	return stmt;
+}
+
+Decl* decl_parse() {
+	Decl *decl = NULL;
+	return decl;
+}
+
+void parse() {
+	Decl *main_func;
+	while (!is_token(TOKEN_EOF)) {
+	}
+}
+
 void parse_test() {
 	expr_test();
 }
+
+#undef UINT64_MINUS
+#undef assert_expr
+#undef assert_bin_expr
+#undef get_op_and_next_token
+#undef pause
