@@ -152,8 +152,6 @@ ptr := (:int*)u
 
 typespec = NAME | '(' ':' type ')'
 
-/-("(1+3)*(3*-2)")-/
-
 operand_expr = INT
              | FLOAT
              | STR
@@ -161,6 +159,7 @@ operand_expr = INT
              | typespec? '{' expr_list '}'
              | CAST '(' type ',' expr ')'
              | '(' expr ')'
+
 base_expr = operand_expr ('(' expr_list ')' | '[' expr ']' | '.' NAME)*
 unary_expr = [+-~!&*] unary_expr
            | base_expr

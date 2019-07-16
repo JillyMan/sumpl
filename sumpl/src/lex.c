@@ -307,7 +307,6 @@ top:
 			stream++;
 		}
 		goto top;
-		break;
 	case '\'':
 		scan_char();
 		break;

@@ -50,6 +50,8 @@ typedef struct BufHdr {
 	char buf[0];
 } BufHdr;
 
+#define array_size(x) sizeof(x) / sizeof(*x)
+
 #define line() printf("-------------------------------\n");
 
 #define MIN(x, y) ((x) <= (y) ? (x) : (y))
@@ -138,10 +140,6 @@ void str_intern_test() {
 	const char *py = str_intern(y);
 	const char *pz = str_intern(z);
 	assert(px == py);
-
-	for (int i = 0; i < buf_len(interns); ++i) {
-		printf("interns[%d]: %s\n", i, interns[i].str);
-	}
 }
 
 
