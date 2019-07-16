@@ -35,5 +35,14 @@
     <ClInclude Include="src\lex.c">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\ast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\print.c">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parse.c">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

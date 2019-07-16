@@ -12,14 +12,19 @@
 #include <string.h>
 #include <stdarg.h>
 #include <inttypes.h>
+
 #include "common.c"
 #include "lex.c"
+#include "ast.h"
 #include "ast.c"
+#include "print.c"
+#include "parse.c"
 
 void run_tests() {
 	common_tests();
 	lex_test();
-	ast_test();
+	//ast_test();
+	parse_test();
 }
 
 int main(int argc, char const **argv) {
