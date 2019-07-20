@@ -19,12 +19,14 @@
 #include "ast.c"
 #include "print.c"
 #include "parse.c"
+#include "stack_vm.c"
 
 void run_tests() {
 	common_tests();
 	lex_test();
 	//ast_test();
 	parse_test();
+	stack_vm_test();
 }
 
 int main(int argc, char const **argv) {

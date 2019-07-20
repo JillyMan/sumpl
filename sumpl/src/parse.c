@@ -1,3 +1,5 @@
+#define pause() //system("PAUSE")
+
 Expr* parse_expr();
 
 Expr* parse_operand() {
@@ -252,7 +254,6 @@ uint64_t exec_expr(Expr *expr) {
 
 #define assert_expr(expr,res) assert(exec_expr(expr) == res)
 #define assert_bin_expr(expr) init_stream(#expr); assert_expr(parse_expr(), expr);
-#define pause() system("PAUSE")
 
 void print_expr_tests() {
 	Expr *exprs[] = {
@@ -311,7 +312,7 @@ Decl* decl_parse() {
 }
 
 void parse() {
-	Decl *main_func;
+	Decl *main_func = NULL;
 	while (!is_token(TOKEN_EOF)) {
 	}
 }
